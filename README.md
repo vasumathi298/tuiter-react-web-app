@@ -1,6 +1,6 @@
 # App Deployed in Netlify
 
-https://a1--genuine-fudge-ca1abe.netlify.app/
+[Tuiter App](https://a1--genuine-fudge-ca1abe.netlify.app/)
 
 # Getting Started with Create React App
 
