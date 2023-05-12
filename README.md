@@ -1,3 +1,7 @@
+# App Deployed in Netlify
+
+[Tuiter App](https://a1--genuine-fudge-ca1abe.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
