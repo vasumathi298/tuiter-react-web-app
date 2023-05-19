@@ -1,0 +1,60 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 12px;
+  }
+  
+  .wd-tuit {
+    padding: 12px;
+    width: 1100px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .border-class{
+    border: 2px solid lightgray;
+    border-radius: 20px;
+
+  }
+  .wd-tuit-content {
+    margin-left: 50px;
+    width:850px;
+  }
+
+  .setting::before {
+    content: ". . .";
+    position: absolute;
+    top: 0;
+    right: 250px;
+    font-size: larger;
+    font-weight: bolder;
+    color: grey;
+  }
+
+
+  .wd-tuit-content h3{
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  .wd-tuit-image {
+    width: 50px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+  }
+
+.h3-span{
+    font-size: 18px;
+    font-weight: bolder;
+    color:#4d4a4a;
+    text-decoration: none;
+    padding-left: 10px;
+    display: inline-block;
+}
+
+.wd-tuit-content p{
+    font-size: larger;
+    font-weight: 900;
+}
