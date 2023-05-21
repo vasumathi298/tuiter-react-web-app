@@ -273,15 +273,10 @@
     padding: 0;
   }
   
- 
-  
  .wd-left-div{
  
      background-color: white;
      color:black;
-     height:100%;
-     width: 100%;
-     margin:0px;
  }
  
  .wd-section-border{
@@ -297,7 +292,14 @@
      width:100%;
      border-collapse: collapse;
      margin: 0; /* Added margin property */
+    }
 
+  
+    @media (max-width: 800px) { /* Adjust the breakpoint as needed */
+      table td {
+        display: block;
+        white-space: nowrap;
+      }
     }
  
  .wd-logo{
@@ -374,4 +376,6 @@
   .text-black {
     color: black;
   }
+
+  
 

@@ -1,8 +1,10 @@
 <html>
 <head>
     <style>
-       
-
+          p#styletag {
+            background-color: blue;
+            color: white;
+          }
     </style>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -19,20 +21,24 @@
   and you should avoid using the style attribute
 </p>
 
-<h3>Style tag</h3>
-<p>
+<h3>Style tag </h3>
+<p id="styletag">
 A slightly better way to configure look and feel
 is to declare CSS rules in the STYLE tag in the
 header and then refer to the tag by their name, 
 ID, or class This paragraph's style is set by a 
-rule referring to the P tags
+rule referring to the P tags. 
+Green color will be applied for this paragraph as I have
+configured the css for the tag in index.css file.
 </p>
 
 <h3>Link tag</h3>
-<p>
+<p id="linktag">
    The best way to apply CSS rules is to declare
    them in a separate CSS file and load it with 
    the LINK tag. Always use this method.
+   Green color will be applied for this paragraph as I have
+configured the css for the tag in index.css file.
 </p>
 
 <h3>ID selectors</h3>
