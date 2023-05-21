@@ -78,5 +78,20 @@ body {
   background-color: white;
   color: black;
 }
+.menu {
+  display: flex;
+  align-items: center;
+}
 
+.back-button {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.menu-item {
+  margin-right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
 
