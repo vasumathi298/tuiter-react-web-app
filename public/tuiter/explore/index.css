@@ -277,6 +277,7 @@
  
      background-color: white;
      color:black;
+     width: 100%;
  }
  
  .wd-section-border{
@@ -284,24 +285,24 @@
     border: 1px solid  #D3D3D3;
     padding: 0px;
      margin-left: 0;
-     margin-right: 0;
- 
+     margin-right: 0; 
  }
+ .wd-section-border1{
  
+  border: 1px solid  #D3D3D3;
+  padding: 0px;
+   margin-left: 0;
+   margin-right: 0; 
+}
  table{
      width:100%;
      border-collapse: collapse;
      margin: 0; /* Added margin property */
     }
+    .list-group-item.list-group-item-action {
+      width: 100%; /* Default width */
+  }
 
-  
-    @media (max-width: 800px) { /* Adjust the breakpoint as needed */
-      table td {
-        display: block;
-        white-space: nowrap;
-      }
-    }
- 
  .wd-logo{
      height: 48px;
      width: 48px;
@@ -376,6 +377,27 @@
   .text-black {
     color: black;
   }
+
+  .wd-nav-tabs-line .nav-tabs {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: nowrap; /* Prevent tabs from wrapping to the next line */
+    justify-content: flex-start; /* Align tabs to the left */
+  }
+  
+  .wd-nav-tabs-line .nav-link {
+    flex-grow: 1; /* Allow tabs to grow and fill the available space */
+    text-align: center; /* Center align the tab text */
+    white-space: nowrap; /* Prevent tab text from wrapping */
+  }
+  
+  @media (max-width: 992px) {
+    .wd-nav-tabs-line .nav-link {
+      flex-grow: 0; /* Reset flex-grow to prevent tabs from growing */
+      width: auto; /* Allow tabs to adjust their width */
+    }
+  }
+  
+  
 
   
 
