@@ -396,6 +396,27 @@
       width: auto; /* Allow tabs to adjust their width */
     }
   }
+
+  .follow-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.follow-content img {
+    margin-right: 8px;
+}
+
+.follow-content h5,
+.follow-content h6 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
   
   
 
