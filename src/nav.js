@@ -8,7 +8,7 @@ function Nav() {
        A4</Link>
      <Link className="nav-link" to="/hello">
        Hello</Link>
-     <Link className="nav-link" to="/tuiter">
+     <Link className="nav-link" to="/tuiter/home">
        Tuiter</Link>
    </nav>
  );
