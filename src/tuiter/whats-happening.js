@@ -7,9 +7,9 @@ import { BsEmojiSmile } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiBold, BiItalic } from "react-icons/bi";
 import { BiCalendarCheck } from "react-icons/bi";
-
 import { createTuit } from "./reducer/tuits-reducer";
 import {useDispatch} from "react-redux";
+import {createTuitThunk} from "./services/tuits-thunks";
 const WhatsHappening = () => {
  let [whatsHappening, setWhatsHappening] = useState('');
  const dispatch = useDispatch();
@@ -17,7 +17,14 @@ const WhatsHappening = () => {
     const newTuit = {
         tuit: whatsHappening
       }
-      dispatch(createTuit(newTuit));
+      newTuit.image="tesla.png";
+      newTuit.liked=false;
+      newTuit.likes=0;
+      newTuit.retuits=0;
+      newTuit.replies=0;
+      newTuit.handle="@tesla";
+      newTuit.dislike=0;
+      dispatch(createTuitThunk(newTuit));
       setWhatsHappening("");
    console.log(whatsHappening);
  }
@@ -53,4 +60,3 @@ const WhatsHappening = () => {
  );
 }
 export default WhatsHappening;
-

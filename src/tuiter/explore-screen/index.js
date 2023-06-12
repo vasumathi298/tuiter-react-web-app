@@ -32,7 +32,7 @@ function ExploreScreen() {
                             <a href="sports.html" class="nav-link">Sports</a>
                         </li>
                         <li class="nav-item d-none d-md-inline">
-                            <a href="entertainment.html" class="nav-link">Entertainment</a>\
+                            <a href="entertainment.html" class="nav-link">Entertainment</a>
                         </li>
      </ul>
      <div className="position-relative mb-2">
@@ -46,4 +46,3 @@ function ExploreScreen() {
  );
 };
 export default ExploreScreen;
-

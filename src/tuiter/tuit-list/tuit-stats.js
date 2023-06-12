@@ -4,8 +4,9 @@ import { IoMdRepeat } from "react-icons/io";
 import  { useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
-
-
+import { updateTuitThunk } from "../services/tuits-thunks";
+import { useDispatch } from "react-redux";
+import { FaThumbsDown } from "react-icons/fa";
 const TuitStats = (
     {
         tuit =   {
@@ -27,7 +28,7 @@ const TuitStats = (
     const [isLiked, setIsLiked] = useState(tuit.liked);
     const [likeCount, setLikeCount] = useState(tuit.likes);
     //console.log(isLiked, likeCount)
-
+    const dispatch = useDispatch();
     const handleLike = () => {
         //console.log("inside the handle like")
         if (isLiked) {
@@ -45,12 +46,22 @@ const TuitStats = (
           <div ><FaRegComment size={25}/> {tuit.replies}</div>
           <div><IoMdRepeat size={25} /> {tuit.retuits}</div>
           <div onClick={handleLike}>
-             {isLiked ? (
-            <AiFillHeart size={25} style={{ color: "red" }} />
-            ) : (
-            <AiOutlineHeart size={25} />
+             { (
+            <AiFillHeart size={25} style={{ color: "red" }} onClick={() =>
+              dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))
+            }
+          />
             )}
-            {likeCount}
+            {tuit.likes}
+         </div>
+         <div onClick={handleLike}>
+             { (
+            <FaThumbsDown size={25} style={{ color: "blue" }} onClick={() =>
+              dispatch(updateTuitThunk({ ...tuit, dislike: tuit.dislike + 1 }))
+            }
+          />
+            )}
+             { tuit.dislike}
          </div>
           <div><FiUpload size={25}/></div>
       </div>
