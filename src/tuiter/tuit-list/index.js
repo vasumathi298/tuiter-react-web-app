@@ -4,11 +4,11 @@ import TuitItem from "./tuit-item";
 import {useDispatch,useSelector} from "react-redux";
 import {findTuitsThunk} from "../services/tuits-thunks";
 const TuitsList = () => {
- const { tuits, loading } = useSelector(state => state.tuits)
+ const { tuits } = useSelector(state => state.tuits)
  const dispatch = useDispatch();
  useEffect(() => {
   dispatch(findTuitsThunk())
-}, [])
+}, [dispatch])
 
  return(
    <ul className="list-group">

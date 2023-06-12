@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 import { IoMdRepeat } from "react-icons/io";
 import  { useState } from "react";
 import { FiUpload } from "react-icons/fi";
