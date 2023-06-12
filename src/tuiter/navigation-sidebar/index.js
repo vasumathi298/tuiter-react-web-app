@@ -57,9 +57,9 @@ const NavigationSidebar = () => {
       >
         More
       </Link>
-      {!currentUser && <Link className="list-group" to="/tuiter/login">   Login   </Link>}
-     {!currentUser && <Link className="list-group" to="/tuiter/register">Register</Link>}
-     { currentUser && <Link className="list-group" to="/tuiter/profile"> Profile </Link>}
+      {!currentUser && <Link className={`list-group-item ${active === "login" ? "active" : ""}`} to="/tuiter/login">   Login   </Link>}
+     {!currentUser && <Link className={`list-group-item ${active === "register" ? "active" : ""}`} to="/tuiter/register">Register</Link>}
+     { currentUser && <Link className={`list-group-item ${active === "profile" ? "active" : ""}`} to="/tuiter/profile"> Profile </Link>}
     </div>
   );
 };
