@@ -22,7 +22,7 @@ const WhatsHappening = () => {
       newTuit.retuits=0;
       newTuit.replies=0;
       newTuit.handle="@tesla";
-      newTuit.disliked=false;
+      newTuit.disliked=true;
       newTuit.dislikes=1;
       dispatch(createTuitThunk(newTuit));
       setWhatsHappening("");
