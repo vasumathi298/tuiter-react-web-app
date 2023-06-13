@@ -1,12 +1,12 @@
 import React from "react";
-import { AiFillHeart } from "react-icons/ai";
 import { IoMdRepeat } from "react-icons/io";
-import  { useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
 import { updateTuitThunk } from "../services/tuits-thunks";
 import { useDispatch } from "react-redux";
-import { FaThumbsDown } from "react-icons/fa";
+import { FaThumbsDown, FaRegThumbsDown } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
 const TuitStats = (
     {
         tuit =   {
@@ -25,44 +25,49 @@ const TuitStats = (
        }
       }
 ) => {
-    const [isLiked, setIsLiked] = useState(tuit.liked);
-    const [likeCount, setLikeCount] = useState(tuit.likes);
+   
     //console.log(isLiked, likeCount)
     const dispatch = useDispatch();
-    const handleLike = () => {
-        //console.log("inside the handle like")
-        if (isLiked) {
-        setLikeCount(likeCount - 1);
-        } else {
-        setLikeCount(likeCount + 1);
-        }
-        setIsLiked(!isLiked);
-    };
-
+    
     return(
 
       <div className="col-10"> 
         <div className="d-flex justify-content-between">
           <div ><FaRegComment size={25}/> {tuit.replies}</div>
           <div><IoMdRepeat size={25} /> {tuit.retuits}</div>
-          <div onClick={handleLike}>
-             { (
-            <AiFillHeart size={25} style={{ color: "red" }} onClick={() =>
-              dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))
-            }
-          />
-            )}
-            {tuit.likes}
-         </div>
-         <div onClick={handleLike}>
-             { (
-            <FaThumbsDown size={25} style={{ color: "blue" }} onClick={() =>
-              dispatch(updateTuitThunk({ ...tuit, dislike: tuit.dislike + 1 }))
-            }
-          />
-            )}
-             { tuit.dislike}
-         </div>
+          
+          <div >
+                {/*JSX style is an object*/}
+                <button style={{
+                    background: 'transparent',
+                    border: 'none',
+                    padding: '0',
+                    cursor: "pointer",
+                }} onClick={() => tuit.liked ? dispatch(
+                                                 updateTuitThunk({...tuit, liked: false, likes: tuit.likes - 1})) :
+                                  dispatch(updateTuitThunk(
+                                      {...tuit, liked: true, likes: tuit.likes + 1}))}>{tuit.liked ?
+                                                                                        <FaHeart
+                                                                                            style={{color: "#E0245E"}}/>
+                                                                                                   :
+                                                                                        <FiHeart/>}</button>
+                &nbsp;&nbsp;{tuit.likes}
+            </div>
+            <div>
+                {/*JSX style is an object*/}
+                <button style={{
+                    background: 'transparent',
+                    border: 'none',
+                    padding: '0',
+                    cursor: "pointer",
+                    // if the tuit was already disliked, then clicking thumbs down means remove
+                    // a dislike
+                }} onClick={() => tuit.dislike ? dispatch(
+                    updateTuitThunk({...tuit, dislike: false, dislike: tuit.dislike - 1})) : dispatch(updateTuitThunk(
+                                      {...tuit, dislike: true, dislike: tuit.dislike + 1}))}>{tuit.dislike ?
+                                                                                        <FaThumbsDown style={{color: "#E0245E"}}/> : <FaRegThumbsDown/>}</button>
+                &nbsp;&nbsp;{tuit.dislike}
+            </div>
           <div><FiUpload size={25}/></div>
       </div>
       </div>
