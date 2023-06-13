@@ -18,12 +18,12 @@ const WhatsHappening = () => {
       }
       newTuit.image="tesla.png";
       newTuit.liked=false;
-      newTuit.likes=0;
+      newTuit.likes=1;
       newTuit.retuits=0;
       newTuit.replies=0;
       newTuit.handle="@tesla";
       newTuit.disliked=false;
-      newTuit.dislikes=0;
+      newTuit.dislikes=1;
       dispatch(createTuitThunk(newTuit));
       setWhatsHappening("");
    console.log(whatsHappening);
