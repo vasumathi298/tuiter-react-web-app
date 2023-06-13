@@ -53,7 +53,7 @@ const TuitStats = (
                                                                                         <FiHeart/>}</button>
                 &nbsp;&nbsp;{tuit.likes}
             </div>
-            <div>
+            <div className={"col-2"}>
                 {/*JSX style is an object*/}
                 <button style={{
                     background: 'transparent',
@@ -62,11 +62,11 @@ const TuitStats = (
                     cursor: "pointer",
                     // if the tuit was already disliked, then clicking thumbs down means remove
                     // a dislike
-                }} onClick={() => tuit.dislike ? dispatch(
-                    updateTuitThunk({...tuit, dislike: false, dislike: tuit.dislike - 1})) : dispatch(updateTuitThunk(
-                                      {...tuit, dislike: true, dislike: tuit.dislike + 1}))}>{tuit.dislike ?
+                }} onClick={() => tuit.disliked ? dispatch(
+                    updateTuitThunk({...tuit, disliked: false, dislikes: tuit.dislikes - 1})) : dispatch(updateTuitThunk(
+                                      {...tuit, disliked: true, dislikes: tuit.dislikes + 1}))}>{tuit.disliked ?
                                                                                         <FaThumbsDown style={{color: "#E0245E"}}/> : <FaRegThumbsDown/>}</button>
-                &nbsp;&nbsp;{tuit.dislike}
+                &nbsp;&nbsp;{tuit.dislikes}
             </div>
           <div><FiUpload size={25}/></div>
       </div>
