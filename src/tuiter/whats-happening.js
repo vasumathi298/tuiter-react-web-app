@@ -24,6 +24,7 @@ const WhatsHappening = () => {
       newTuit.handle="@tesla";
       newTuit.disliked=true;
       newTuit.dislikes=1;
+      
       dispatch(createTuitThunk(newTuit));
       setWhatsHappening("");
    console.log(whatsHappening);
